@@ -1,7 +1,7 @@
 {
   "name": "jtech-framework-support",
   "displayName": "JTech Framework Support",
-  "publisher": "jauhar-imtikhan",
+  "publisher": "jauharjtech",
   "description": "Official support for JTech Framework (Blade Syntax, Snippets, & Icons).",
   "version": "0.0.1",
   "icon": "./logo-jtech.png",

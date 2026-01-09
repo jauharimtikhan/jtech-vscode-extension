@@ -8,3 +8,4 @@ vsc-extension-quickstart.md
 **/.vscode-test.*
 /node_modules
 package-lock.json
+*.vsix
