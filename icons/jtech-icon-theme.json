@@ -1,0 +1,10 @@
+{
+  "iconDefinitions": {
+    "_jtech": {
+      "iconPath": "./logo-jtech.svg"
+    }
+  },
+  "fileExtensions": {
+    "jtech.php": "_jtech"
+  }
+}

@@ -1,0 +1,232 @@
+{
+  "Blade Comment": {
+    "prefix": "com",
+    "body": "{{-- ${1:comment} --}}$0",
+    "description": "Blade comment."
+  },
+  "Echo Data": {
+    "prefix": "echo",
+    "body": "{{ ${1:\\$${2:message}} }}$0",
+    "description": "Evaluates code and escapes the resulting string."
+  },
+  "Echo Data Helper": {
+    "prefix": "echoh",
+    "body": "{{{ ${1:\\$${2:message}} }}}$0",
+    "description": "Evaluates code and escapes the resulting string using e() helper."
+  },
+  "Raw Echo": {
+    "prefix": "raw",
+    "body": "{!! ${1:\\$${2:message}} !!}$0",
+    "description": "Evaluates code without escaping the resulting string."
+  },
+  "Component": {
+    "prefix": "x",
+    "body": "<x-${1:component}${2: ${3:attribute}=\"${4:value}\"} />$0",
+    "description": "Generic component tag"
+  },
+  "Component Slot": {
+    "prefix": "xx",
+    "body": "<x-${1:component}${2: ${3:attribute}=\"${4:value}\"}>${5:\n\t$0\n}</x-${1:component}>",
+    "description": "Generic component tag with slot"
+  },
+  "CSRF": {
+    "prefix": ["csrf", "@csrf"],
+    "body": "@csrf$0",
+    "description": "Includes a CSRF field for use in forms."
+  },
+  "Else": {
+    "prefix": ["else", "@else"],
+    "body": "@else$0",
+    "description": "Control structure for use with if statements."
+  },
+  "Append": {
+    "prefix": ["append", "@append"],
+    "body": "@append$0",
+    "description": "Appends defined section to an existing one of the same name."
+  },
+  "Overwrite": {
+    "prefix": ["overwrite", "@overwrite"],
+    "body": "@overwrite$0",
+    "description": "Overwrites a defined section."
+  },
+  "Show": {
+    "prefix": ["show", "@show"],
+    "body": "@show$0",
+    "description": "Shows and yields immediately a defined section."
+  },
+  "Stop": {
+    "prefix": ["stop", "@stop"],
+    "body": "@stop$0",
+    "description": "Alternative syntax for @endsection."
+  },
+  "Parent": {
+    "prefix": ["parent", "@parent"],
+    "body": "@parent$0",
+    "description": "Appends content a section instead of overwriting."
+  },
+  "Else If": {
+    "prefix": ["elseif", "@elseif"],
+    "body": "@elseif (${1:\\$${2:condition}})$0",
+    "description": "Elseif branch used in if statements."
+  },
+  "Foreach": {
+    "prefix": ["foreach", "@foreach"],
+    "body": "@foreach (${1:\\$${2:iterable}} as ${3:\\$${4:key}}${5: => ${6:\\$${7:value}}})\n\t$0\n@endforeach",
+    "description": "Foreach loop."
+  },
+  "If Else": {
+    "prefix": ["ifelse", "@ifelse"],
+    "body": "@if (${1:\\$${2:condition}})\n\t$3\n@else\n\t$0\n@endif",
+    "description": "If-else statement."
+  },
+  "If": {
+    "prefix": ["if", "@if"],
+    "body": "@if (${1:\\$${2:condition}})\n\t$0\n@endif",
+    "description": "If statement."
+  },
+  "Choice": {
+    "prefix": ["choice", "@choice"],
+    "body": "@choice('${1:category.line}', ${2:1})$0",
+    "description": "Displays a pluralized localized string."
+  },
+  "Each": {
+    "prefix": ["each", "@each"],
+    "body": "@each('${1:view}', ${2:\\$${3:iterable}}, '${4:value}', '${5:empty}')$0",
+    "description": "Iterates over a collection, displaying contents of a view for each element."
+  },
+  "Extends": {
+    "prefix": ["extends", "@extends"],
+    "body": "@extends('${1:view}')$0",
+    "description": "Extends a layout."
+  },
+  "For Loop": {
+    "prefix": ["for", "@for"],
+    "body": "@for (\\$${1:i}=${2:0}; \\$${1:i} < ${3:10}; \\$${1:i}++)\n\t$0\n@endfor",
+    "description": "For loop."
+  },
+  "Forelse": {
+    "prefix": ["forelse", "@forelse"],
+    "body": "@forelse (\\$${1:variable} as \\$${2:key}${3: => \\$${4:value}})\n\t$5\n@empty\n\t$0\n@endforelse",
+    "description": "Executes a foreach loop or displays contents of @empty block if there are no entries."
+  },
+  "Include": {
+    "prefix": ["include", "@include"],
+    "body": "@include('${1:view}')$0",
+    "description": "Includes a sub-view."
+  },
+  "Lang": {
+    "prefix": ["lang", "@lang"],
+    "body": "@lang('${1:category.line}')$0",
+    "description": "Displays a localized string."
+  },
+  "Prepend": {
+    "prefix": ["prepend", "@prepend"],
+    "body": "@prepend('${1:name}')\n\t$0\n@endprepend",
+    "description": "Prepends content to stack."
+  },
+  "Push": {
+    "prefix": ["push", "@push"],
+    "body": "@push('${1:name}')\n\t$0\n@endpush",
+    "description": "Pushes content to stack."
+  },
+  "Section": {
+    "prefix": ["sec", "@section"],
+    "body": "@section('${1:name}')\n\t$0\n@${2:endsection}",
+    "description": "Defines a section of content."
+  },
+  "Stack": {
+    "prefix": ["stack", "@stack"],
+    "body": "@stack('${1:name}')$0",
+    "description": "Renders contents of the stack."
+  },
+  "Unless": {
+    "prefix": ["unless", "@unless"],
+    "body": "@unless (${1:\\$${2:condition}})\n\t$0\n@endunless",
+    "description": "Shorthand for if-not statement."
+  },
+  "While": {
+    "prefix": ["while", "@while"],
+    "body": "@while (${1:\\$${2:condition}})\n\t$0\n@endwhile",
+    "description": "While loop."
+  },
+  "Yield": {
+    "prefix": ["yield", "@yield"],
+    "body": "@yield('${1:section}')$0",
+    "description": "Displays contents of a given section."
+  },
+  "PHP Block": {
+    "prefix": ["php", "@php"],
+    "body": "@php\n\t$0\n@endphp",
+    "description": "Embeds PHP code."
+  },
+  "Component Directive": {
+    "prefix": ["component", "@component"],
+    "body": "@component('${1:component}')\n\t$0\n@endcomponent",
+    "description": "Constructs a component."
+  },
+  "Slot": {
+    "prefix": ["slot", "@slot"],
+    "body": "@slot('${1:variable}')\n\t$0\n@endslot",
+    "description": "Injects content into slot variable."
+  },
+  "Isset": {
+    "prefix": ["isset", "@isset"],
+    "body": "@isset(${1:\\$var})\n\t$0\n@endisset",
+    "description": "Determines whether a variable is considered to be empty using PHP isset() function."
+  },
+  "Verbatim": {
+    "prefix": ["verbatim", "@verbatim"],
+    "body": "@verbatim\n\t$0\n@endverbatim",
+    "description": "Protects text from being processed as Blade syntax."
+  },
+  "Empty Check": {
+    "prefix": ["empty", "@empty"],
+    "body": "@empty (${1:\\$var})\n\t$0\n@endempty",
+    "description": "Determines whether a variable is considered to be empty using PHP empty() function."
+  },
+  "Continue": {
+    "prefix": ["continue", "@continue"],
+    "body": "@continue${1:(${2:\\$${3:condition}})}$0",
+    "description": "Continue statement used in loops."
+  },
+  "Break": {
+    "prefix": ["break", "@break"],
+    "body": "@break${1:(${2:\\$${3:condition}})}$0",
+    "description": "Break statement used in switches and loops."
+  },
+  "Include If": {
+    "prefix": ["includeif", "@includeif"],
+    "body": "@includeif('${1:view}', ${2:\\$${3:data}})$0",
+    "description": "Includes a view if present."
+  },
+  "Inject": {
+    "prefix": ["inject", "@inject"],
+    "body": "@inject('${1:var}', ${2:${3:SomeClass}::class})$0",
+    "description": "Retrieves a service from the Laravel service container."
+  },
+  "Can": {
+    "prefix": ["can", "@can"],
+    "body": "@can ('${1:update}', ${2:\\$post})\n\t$0\n@endcan",
+    "description": "Determines whether user has been authorized to perform an action."
+  },
+  "Cannot": {
+    "prefix": ["cannot", "@cannot"],
+    "body": "@cannot ('${1:update}', ${2:\\$post})\n\t$0\n@endcannot",
+    "description": "Determines whether user has not been authorized to perform an action."
+  },
+  "Auth": {
+    "prefix": ["auth", "@auth"],
+    "body": "@auth${1: ('${2:admin}')}\n\t$0\n@endauth",
+    "description": "Determines whether user has authenticated."
+  },
+  "Guest": {
+    "prefix": ["guest", "@guest"],
+    "body": "@guest\n\t$0\n@endguest",
+    "description": "Determines whether user is guest."
+  },
+  "Error": {
+    "prefix": ["error", "@error"],
+    "body": "@error ('${1:field}')\n\t$0\n@enderror",
+    "description": "Determines whether there is an input error associated with the field."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "HTML5 Boilerplate": {
+    "prefix": ["!", "html"],
+    "body": [
+      "<!DOCTYPE html>",
+      "<html lang=\"en\">",
+      "<head>",
+      "    <meta charset=\"UTF-8\">",
+      "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+      "    <title>${1:Document}</title>",
+      "</head>",
+      "<body>",
+      "    $0",
+      "</body>",
+      "</html>"
+    ],
+    "description": "HTML5 Boilerplate"
+  },
+  "Div Class": {
+    "prefix": ".",
+    "body": ["<div class=\"$1\">$0</div>"],
+    "description": "Div with Class"
+  },
+  "PHP Tag": {
+    "prefix": "php",
+    "body": ["<?php $0 ?>"],
+    "description": "Inline PHP Tag"
+  },
+  "Echo Tag": {
+    "prefix": "=",
+    "body": ["<?= $0 ?>"],
+    "description": "Echo PHP Tag"
+  }
+}

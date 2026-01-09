@@ -1,0 +1,511 @@
+{
+  "name": "jtech-framework-support",
+  "displayName": "JTech Framework Support",
+  "publisher": "jauhar-imtikhan",
+  "description": "Official support for JTech Framework (Blade Syntax, Snippets, & Icons).",
+  "version": "0.0.1",
+  "icon": "./logo-jtech.png",
+  "engines": {
+    "vscode": "^1.107.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Themes"
+  ],
+  "activationEvents": [
+    "onLanguage:php"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "jtech",
+        "aliases": [
+          "JTech Blade",
+          "jtech"
+        ],
+        "extensions": [
+          ".jtech.php"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/logo-jtech.svg",
+          "dark": "./icons/logo-jtech.svg"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "jtech",
+        "scopeName": "text.html.php.jtech",
+        "path": "./syntaxes/jtech.tmLanguage.json",
+        "embeddedLanguages": {
+          "source.php": "php",
+          "source.css": "css",
+          "source.js": "javascript"
+        }
+      }
+    ],
+    "iconThemes": [
+      {
+        "id": "jtech-icon-theme",
+        "label": "JTech Icons",
+        "path": "./icons/jtech-icon-theme.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "jtech",
+        "path": "./snippets/jtech.json"
+      },
+      {
+        "language": "jtech",
+        "path": "./snippets/html-standard.json"
+      }
+    ],
+    "configuration": {
+      "title": "Jtech",
+      "properties": {
+        "Jtech.phpEnvironment": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "herd",
+            "valet",
+            "sail",
+            "lando",
+            "ddev",
+            "local"
+          ],
+          "enumItemLabels": [
+            "Auto Detect",
+            "Herd",
+            "Valet",
+            "Sail",
+            "Lando",
+            "DDEV",
+            "Local"
+          ],
+          "markdownEnumDescriptions": [
+            "Auto detect the local PHP environment.",
+            "Auto detect PHP version Herd is using for the project.",
+            "Auto detect PHP version Valet is using for the project.",
+            "Sail",
+            "Lando",
+            "DDEV",
+            "Use PHP installed on the local machine."
+          ],
+          "default": "auto",
+          "markdownDescription": "Local PHP environment. If you have a value for `#Jtech.phpCommand#` this setting will be ignored and that value will be used instead."
+        },
+        "Jtech.phpCommand": {
+          "type": "string",
+          "description": "Template for running PHP code. Use {code} as an optional placeholder for the php file to run. e.g. `php \"{code}\"`.\n\nIf no {code} is present, code filepath will be appended to the command."
+        },
+        "Jtech.basePath": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "_Relative_ base path for the Jtech project. This is used to resolve paths in the project. e.g. src, code/backend\n\n_Requires extension reload after changing._"
+        },
+        "Jtech.showErrorPopups": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show popups for errors."
+        },
+        "Jtech.env.viteQuickFix": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable quickfix for adding VITE_ variables from regular env variables."
+        },
+        "Jtech.eloquent.generateDocBlocks": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically generate Eloquent doc blocks for models as IDE helpers."
+        },
+        "Jtech.blade.autoSpaceTags": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically add spacing around Blade echo and comment tags."
+        },
+        "Jtech.pint.runOnSave": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically run Pint on the current file when saved."
+        },
+        "Jtech.appBinding.diagnostics": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable diagnostics for app bindings."
+        },
+        "Jtech.appBinding.hover": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable hover information for app bindings."
+        },
+        "Jtech.appBinding.link": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable linking for app bindings."
+        },
+        "Jtech.appBinding.completion": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable completion for app bindings."
+        },
+        "Jtech.asset.diagnostics": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable diagnostics for asset."
+        },
+        "Jtech.asset.hover": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable hover information for asset."
+        },
+        "Jtech.asset.link": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable linking for asset."
+        },
+        "Jtech.asset.completion": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable completion for asset."
+        },
+        "Jtech.auth.diagnostics": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable diagnostics for auth."
+        },
+        "Jtech.auth.hover": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable hover information for auth."
+        },
+        "Jtech.auth.link": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable linking for auth."
+        },
+        "Jtech.auth.completion": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable completion for auth."
+        },
+        "Jtech.bladeComponent.link": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable linking for Blade components."
+        },
+        "Jtech.bladeComponent.completion": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable completion for Blade components."
+        },
+        "Jtech.bladeComponent.hover": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable hover information for Blade components."
+        },
+        "Jtech.config.diagnostics": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable diagnostics for config."
+        },
+        "Jtech.config.hover": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable hover information for config."
+        },
+        "Jtech.config.link": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable linking for config."
+        },
+        "Jtech.config.completion": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable completion for config."
+        },
+        "Jtech.controllerAction.diagnostics": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable diagnostics for controller actions."
+        },
+        "Jtech.controllerAction.hover": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable hover information for controller actions."
+        },
+        "Jtech.controllerAction.link": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable linking for controller actions."
+        },
+        "Jtech.controllerAction.completion": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable completion for controller actions."
+        },
+        "Jtech.env.diagnostics": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable diagnostics for env."
+        },
+        "Jtech.env.hover": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable hover information for env."
+        },
+        "Jtech.env.link": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable linking for env."
+        },
+        "Jtech.env.completion": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable completion for env."
+        },
+        "Jtech.inertia.diagnostics": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable diagnostics for Inertia."
+        },
+        "Jtech.inertia.hover": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable hover information for Inertia."
+        },
+        "Jtech.inertia.link": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable linking for Inertia."
+        },
+        "Jtech.inertia.completion": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable completion for Inertia."
+        },
+        "Jtech.livewireComponent.link": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable linking for Livewire components."
+        },
+        "Jtech.livewireComponent.completion": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable completion for Livewire components."
+        },
+        "Jtech.middleware.diagnostics": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable diagnostics for middleware."
+        },
+        "Jtech.middleware.hover": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable hover information for middleware."
+        },
+        "Jtech.middleware.link": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable linking for middleware."
+        },
+        "Jtech.middleware.completion": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable completion for middleware."
+        },
+        "Jtech.mix.diagnostics": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable diagnostics for mix."
+        },
+        "Jtech.mix.hover": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable hover information for mix."
+        },
+        "Jtech.mix.link": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable linking for mix."
+        },
+        "Jtech.mix.completion": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable completion for mix."
+        },
+        "Jtech.paths.link": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable linking for paths."
+        },
+        "Jtech.route.diagnostics": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable diagnostics for route."
+        },
+        "Jtech.route.hover": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable hover information for route."
+        },
+        "Jtech.route.link": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable linking for route."
+        },
+        "Jtech.route.completion": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable completion for route."
+        },
+        "Jtech.storage.link": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable linking for storage."
+        },
+        "Jtech.storage.completion": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable completion for storage."
+        },
+        "Jtech.storage.diagnostics": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable diagnostics for storage."
+        },
+        "Jtech.translation.diagnostics": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable diagnostics for translation."
+        },
+        "Jtech.translation.hover": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable hover information for translation."
+        },
+        "Jtech.translation.link": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable linking for translation."
+        },
+        "Jtech.translation.completion": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable completion for translation."
+        },
+        "Jtech.view.diagnostics": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable diagnostics for view."
+        },
+        "Jtech.view.hover": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable hover information for view."
+        },
+        "Jtech.view.link": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable linking for view."
+        },
+        "Jtech.view.completion": {
+          "type": "boolean",
+          "default": true,
+          "generated": true,
+          "description": "Enable completion for view."
+        }
+      }
+    }
+  },
+  "configurationDefaults": {
+    "emmet.includeLanguages": {
+      "jtech": "html"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    "files.associations": {
+      "*.jtech.php": "jtech"
+    }
+  },
+  "extensionDependencies": [
+    "vscode.html"
+  ],
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.107.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "typescript-eslint": "^8.48.1",
+    "eslint": "^9.39.1",
+    "typescript": "^5.9.3",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
