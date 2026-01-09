@@ -2,21 +2,11 @@
   "scopeName": "text.html.php.jtech",
   "fileTypes": ["jtech.php"],
   "patterns": [
-    {
-      "include": "#comments"
-    },
-    {
-      "include": "#jtech-directives"
-    },
-    {
-      "include": "#jtech-echo"
-    },
-    {
-      "include": "#php-tags"
-    },
-    {
-      "include": "text.html.basic"
-    }
+    { "include": "#comments" },
+    { "include": "#jtech-directives" },
+    { "include": "#jtech-echo" },
+    { "include": "#php-tags" },
+    { "include": "text.html.basic" }
   ],
   "repository": {
     "comments": {
