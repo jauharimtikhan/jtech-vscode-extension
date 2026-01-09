@@ -1,0 +1,239 @@
+{
+  "HTML5 Boilerplate": {
+    "prefix": "!",
+    "body": [
+      "<!DOCTYPE html>",
+      "<html lang=\"en\">",
+      "<head>",
+      "    <meta charset=\"UTF-8\">",
+      "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+      "    <title>${1:Document}</title>",
+      "</head>",
+      "<body>",
+      "    $0",
+      "</body>",
+      "</html>"
+    ],
+    "description": "HTML5 Boilerplate"
+  },
+  "Div": {
+    "prefix": "div",
+    "body": "<div class=\"$1\">\n\t$0\n</div>",
+    "description": "Div element"
+  },
+  "Span": {
+    "prefix": "span",
+    "body": "<span>$0</span>",
+    "description": "Span element"
+  },
+  "Anchor": {
+    "prefix": "a",
+    "body": "<a href=\"${1:#}\">$0</a>",
+    "description": "Anchor/Link"
+  },
+  "Anchor Blank": {
+    "prefix": "a:blank",
+    "body": "<a href=\"${1:#}\" target=\"_blank\" rel=\"noopener noreferrer\">$0</a>",
+    "description": "Anchor Link New Tab"
+  },
+  "Anchor Mail": {
+    "prefix": "a:mail",
+    "body": "<a href=\"mailto:${1:user@example.com}\">$0</a>",
+    "description": "Email Link"
+  },
+  "Image": {
+    "prefix": "img",
+    "body": "<img src=\"$1\" alt=\"${2:image}\" />",
+    "description": "Image element"
+  },
+  "Image Responsive": {
+    "prefix": "img:responsive",
+    "body": "<img src=\"$1\" alt=\"${2:image}\" class=\"img-fluid\" />",
+    "description": "Responsive Image (Bootstrap style)"
+  },
+  "Input General": {
+    "prefix": "input",
+    "body": "<input type=\"${1:text}\" name=\"${2:name}\" class=\"${3:form-control}\" value=\"$4\" />",
+    "description": "Input field"
+  },
+  "Input Hidden": {
+    "prefix": ["input:hidden", "input:h"],
+    "body": "<input type=\"hidden\" name=\"${1:name}\" value=\"$2\" />",
+    "description": "Hidden Input"
+  },
+  "Input Text": {
+    "prefix": ["input:text", "input:t"],
+    "body": "<input type=\"text\" name=\"${1:name}\" class=\"form-control\" value=\"$2\" />",
+    "description": "Text Input"
+  },
+  "Input Email": {
+    "prefix": "input:email",
+    "body": "<input type=\"email\" name=\"${1:email}\" class=\"form-control\" placeholder=\"${2:example@mail.com}\" />",
+    "description": "Email Input"
+  },
+  "Input Password": {
+    "prefix": ["input:password", "input:p"],
+    "body": "<input type=\"password\" name=\"${1:password}\" class=\"form-control\" />",
+    "description": "Password Input"
+  },
+  "Input Checkbox": {
+    "prefix": ["input:checkbox", "input:c"],
+    "body": "<input type=\"checkbox\" name=\"${1:name}\" value=\"${2:1}\" />",
+    "description": "Checkbox"
+  },
+  "Input Radio": {
+    "prefix": ["input:radio", "input:r"],
+    "body": "<input type=\"radio\" name=\"${1:name}\" value=\"${2:value}\" />",
+    "description": "Radio Button"
+  },
+  "Input Submit": {
+    "prefix": ["input:submit", "input:s"],
+    "body": "<input type=\"submit\" value=\"${1:Submit}\" class=\"btn btn-primary\" />",
+    "description": "Submit Input"
+  },
+  "Input Date": {
+    "prefix": "input:date",
+    "body": "<input type=\"date\" name=\"${1:date}\" class=\"form-control\" />",
+    "description": "Date Input"
+  },
+  "Input File": {
+    "prefix": ["input:file", "input:f"],
+    "body": "<input type=\"file\" name=\"${1:file}\" class=\"form-control\" />",
+    "description": "File Upload Input"
+  },
+  "Label": {
+    "prefix": "label",
+    "body": "<label for=\"${1:id}\">$0</label>",
+    "description": "Label element"
+  },
+  "Textarea": {
+    "prefix": "textarea",
+    "body": "<textarea name=\"${1:name}\" id=\"${2:id}\" cols=\"${3:30}\" rows=\"${4:10}\" class=\"form-control\">$0</textarea>",
+    "description": "Textarea"
+  },
+  "Select": {
+    "prefix": "select",
+    "body": "<select name=\"${1:name}\" class=\"form-control\">\n\t<option value=\"$2\">$3</option>\n\t$0\n</select>",
+    "description": "Select Dropdown"
+  },
+  "Option": {
+    "prefix": "option",
+    "body": "<option value=\"${1:value}\">$0</option>",
+    "description": "Option element"
+  },
+  "Form JTech": {
+    "prefix": "form",
+    "body": "<form action=\"{{ route('${1:route}') }}\" method=\"POST\">\n\t@csrf\n\t$0\n</form>",
+    "description": "HTML Form with JTech CSRF"
+  },
+  "Form GET": {
+    "prefix": "form:get",
+    "body": "<form action=\"{{ route('${1:route}') }}\" method=\"GET\">\n\t$0\n</form>",
+    "description": "HTML Form GET"
+  },
+  "Button": {
+    "prefix": "button",
+    "body": "<button type=\"${1:submit}\" class=\"${2:btn btn-primary}\">$0</button>",
+    "description": "Button"
+  },
+  "Unordered List": {
+    "prefix": "ul",
+    "body": "<ul>\n\t<li>$0</li>\n</ul>",
+    "description": "Unordered List"
+  },
+  "Ordered List": {
+    "prefix": "ol",
+    "body": "<ol>\n\t<li>$0</li>\n</ol>",
+    "description": "Ordered List"
+  },
+  "List Item": {
+    "prefix": "li",
+    "body": "<li>$0</li>",
+    "description": "List item"
+  },
+  "Table": {
+    "prefix": "table",
+    "body": "<table class=\"table\">\n\t<thead>\n\t\t<tr>\n\t\t\t<th>$1</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>$0</td>\n\t\t</tr>\n\t</tbody>\n</table>",
+    "description": "Table"
+  },
+  "Script Inline": {
+    "prefix": "script",
+    "body": "<script>\n\t$0\n</script>",
+    "description": "Script tag"
+  },
+  "Script Src": {
+    "prefix": "script:src",
+    "body": "<script src=\"${1:script.js}\"></script>",
+    "description": "Script with source"
+  },
+  "Style": {
+    "prefix": "style",
+    "body": "<style>\n\t$0\n</style>",
+    "description": "Style tag"
+  },
+  "Link CSS": {
+    "prefix": ["link", "link:css"],
+    "body": "<link rel=\"stylesheet\" href=\"${1:style.css}\">",
+    "description": "Link CSS"
+  },
+  "Link Favicon": {
+    "prefix": "link:favicon",
+    "body": "<link rel=\"shortcut icon\" href=\"${1:favicon.ico}\" type=\"image/x-icon\">",
+    "description": "Link Favicon"
+  },
+  "Meta Viewport": {
+    "prefix": "meta:vp",
+    "body": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+    "description": "Meta Viewport"
+  },
+  "Meta UTF8": {
+    "prefix": "meta:utf",
+    "body": "<meta charset=\"UTF-8\">",
+    "description": "Meta Charset UTF-8"
+  },
+  "Meta Description": {
+    "prefix": "meta:desc",
+    "body": "<meta name=\"description\" content=\"${1:Description}\">",
+    "description": "Meta Description"
+  },
+  "Line Break": {
+    "prefix": "br",
+    "body": "<br />",
+    "description": "Line Break"
+  },
+  "Horizontal Rule": {
+    "prefix": "hr",
+    "body": "<hr />",
+    "description": "Horizontal Rule"
+  },
+  "Iframe": {
+    "prefix": "iframe",
+    "body": "<iframe src=\"${1:url}\" frameborder=\"0\" width=\"${2:100%}\" height=\"${3:500px}\"></iframe>",
+    "description": "Iframe"
+  },
+  "Section": {
+    "prefix": "section",
+    "body": "<section class=\"${1:section}\">\n\t$0\n</section>",
+    "description": "Section Tag"
+  },
+  "Main": {
+    "prefix": "main",
+    "body": "<main>\n\t$0\n</main>",
+    "description": "Main Tag"
+  },
+  "Header": {
+    "prefix": "header",
+    "body": "<header>\n\t$0\n</header>",
+    "description": "Header Tag"
+  },
+  "Footer": {
+    "prefix": "footer",
+    "body": "<footer>\n\t$0\n</footer>",
+    "description": "Footer Tag"
+  },
+  "Nav": {
+    "prefix": "nav",
+    "body": "<nav>\n\t$0\n</nav>",
+    "description": "Nav Tag"
+  }
+}

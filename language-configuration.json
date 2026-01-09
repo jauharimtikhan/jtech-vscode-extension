@@ -20,5 +20,8 @@
     ["(", ")"],
     ["'", "'"],
     ["\"", "\""]
-  ]
+  ],
+  // INI BAGIAN SAKTINYA BRE:
+  // Regex ini ngambil standar HTML, biar dia ngenalin "div.class-name" sebagai satu kata
+  "wordPattern": "(-?\\d*\\.\\d\\w*)|([^\\`\\~\\!\\@\\#\\%\\^\\&\\*\\(\\)\\=\\+\\[\\{\\]\\}\\\\\\|\\;\\:\\'\\\"\\,\\<\\>\\/\\?\\s]+)"
 }

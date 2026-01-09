@@ -43,7 +43,8 @@
         "embeddedLanguages": {
           "source.php": "php",
           "source.css": "css",
-          "source.js": "javascript"
+          "source.js": "javascript",
+          "source.html": "html"
         }
       }
     ],
@@ -62,6 +63,10 @@
       {
         "language": "jtech",
         "path": "./snippets/html-standard.json"
+      },
+      {
+        "language": "jtech",
+        "path": "./snippets/html-tags.json"
       }
     ],
     "configuration": {
@@ -479,17 +484,27 @@
     }
   },
   "configurationDefaults": {
+    "files.associations": {
+      "*.jtech.php": "jtech"
+    },
     "emmet.includeLanguages": {
       "jtech": "html"
     },
+    "emmet.syntaxProfiles": {
+      "jtech": "html"
+    },
     "emmet.triggerExpansionOnTab": true,
-    "files.associations": {
-      "*.jtech.php": "jtech"
+    "emmet.showExpandedAbbreviation": "always",
+    "emmet.showSuggestionsAsSnippets": true,
+    "[jtech]": {
+      "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": true
+      }
     }
   },
-  "extensionDependencies": [
-    "vscode.html"
-  ],
+  "extensionDependencies": [],
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",

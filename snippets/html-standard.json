@@ -20,15 +20,5 @@
     "prefix": ".",
     "body": ["<div class=\"$1\">$0</div>"],
     "description": "Div with Class"
-  },
-  "PHP Tag": {
-    "prefix": "php",
-    "body": ["<?php $0 ?>"],
-    "description": "Inline PHP Tag"
-  },
-  "Echo Tag": {
-    "prefix": "=",
-    "body": ["<?= $0 ?>"],
-    "description": "Echo PHP Tag"
   }
 }
